@@ -101,9 +101,9 @@ func (u *User) SendMsg(msg string) {
 
 // 监听当前User channel的方法，一旦有消息，就发送给对端客户端
 func (u *User) ListenMessage() {
-	for {
-		// 从管道中取出消息
-		msg := <-u.C
+	for msg := range u.C {
+		// 从管道中取出消息，等价于
+		// msg := <-u.C
 		// 转换成二进制发送给对端客户端（发送后换行）
 		u.conn.Write([]byte(msg + "\n"))
 	}
