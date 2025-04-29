@@ -18,9 +18,9 @@ fetch(`/api/rose-price?date=${date}`)
     .then(data => {
         loadingDiv.style.display = "none";
         if (data.success) {
-            resultDiv.innerHTML = `玫瑰的价格是：￥${date.price}`
+            resultDiv.innerHTML = `玫瑰的价格是：￥${data.price}`;
         } else {
-            resultDiv.innerHTML = `没有找到该日期的玫瑰价格`
+            resultDiv.innerHTML = `没有找到该日期的玫瑰价格`;
         }
     })
     .catch(error => {

@@ -54,7 +54,11 @@ func main() {
 	r := mux.NewRouter()
 
 	// 定义路由
-	r.HandleFunc("/api/rose-price", getRosePrice).Methods()
+	r.HandleFunc("/api/rose-price", getRosePrice).Methods("GET")
+
+	// 添加静态文件服务
+	fs := http.FileServer(http.Dir("../"))
+	r.PathPrefix("/").Handler(http.StripPrefix("/", fs))
 
 	// 启动HTTP服务器
 	fmt.Println("服务器正在监听端口 8080...")
