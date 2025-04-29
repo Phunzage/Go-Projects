@@ -2,7 +2,7 @@ function getRosePrice() {
     const date = document.getElementById('date').value;
     const resultDiv = document.getElementById('result')
     const loadingDiv = document.getElementById('loading')
-}
+
 // 验证日期
 if (!date) {
     alert("请先选择日期");
@@ -28,3 +28,4 @@ fetch(`/api/rose-price?date=${date}`)
         console.error("请求出错：",error);
         alert("请求失败，请稍后重试");
     });
+}
