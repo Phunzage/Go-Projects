@@ -1,25 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe3e3 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #4a4a4a;
 }
 
 .container {
     max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-label,
-input,
-button {
+h1 {
+    color: #ff6b6b;
+    margin-bottom: 1.5rem;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+}
+
+label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    color: #666;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1.2rem;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="date"]:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+}
+
+button {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 
+        transform 0.2s ease,
+        background 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
 }
 
 .loading {
-    font-weight: bold;
-    color: #f39c12;
+    width: 40px;
+    height: 40px;
+    margin: 20px auto;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #ff6b6b;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .result {
-    margin-top: 20px;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    color: #333;
+    min-height: 50px;
+}
+
+/* 移动端适配 */
+@media (max-width: 480px) {
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    button {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    input[type="date"] {
+        margin-bottom: 1rem;
+    }
 }
