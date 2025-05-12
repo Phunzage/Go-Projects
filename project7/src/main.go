@@ -17,7 +17,7 @@ var db *sql.DB
 // 初始化数据库连接
 func initDB() (err error) {
 	// 数据库信息
-	dsn := "root:3143@tcp(127.0.0.1:3306)/rose_shop"
+	dsn := "root:Phz81114002@@tcp(127.0.0.1:3306)/rose_shop"
 	// 检测数据库格式
 	db, err = sql.Open("mysql", dsn)
 	if err != nil {
