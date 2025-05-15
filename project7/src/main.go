@@ -16,6 +16,18 @@ var db *sql.DB
 
 // 初始化数据库连接
 func initDB() (err error) {
+
+	/*
+	// 从环境变量获取配置
+	dbUser := os.Getenv("DB_USER")
+	dbPass := os.Getenv("DB_PASSWORD")
+	dbHost := os.Getenv("DB_HOST")
+	dbPort := os.Getenv("DB_PORT")
+	dbName := os.Getenv("DB_NAME")
+
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", dbUser, dbPass, dbHost, dbPort, dbName)
+	*/
+	
 	// 数据库信息
 	dsn := "root:Phz81114002@@tcp(127.0.0.1:3306)/rose_shop"
 	// 检测数据库格式
